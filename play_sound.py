@@ -3,7 +3,32 @@ import time
 
 
 class PlaySound:
-    def __init__(self, morse_code):
+    """
+    Class to play Morse code as sound.
+
+    Attributes
+    ----------
+    morse_code : str
+        A string of Morse code to be played as sound.
+    dot_time_interval : float
+        The time interval for a dot sound in seconds.
+    dash_time_interval : float
+        The time interval for a dash sound in seconds.
+    gap_between_symbols_of_one_letter : float
+        The time interval for a gap between symbols of one letter in seconds.
+    gap_between_letters : float
+        The time interval for a gap between letters in seconds.
+    gap_between_words : float
+        The time interval for a gap between words in seconds.
+    frequency : int
+        The frequency of the sound in Hz.
+
+    Methods
+    -------
+    play() -> None:
+        Play sound associated with every symbol from morse code.
+    """
+    def __init__(self, morse_code: str) -> None:
         self.morse_code = morse_code
         self.dot_time_interval = 0.1
         self.dash_time_interval = 3 * self.dot_time_interval
@@ -30,3 +55,4 @@ class PlaySound:
                 print("-", end="")
                 time.sleep(self.gap_between_simbols_of_one_letter)
             index += 1
+        print('')
